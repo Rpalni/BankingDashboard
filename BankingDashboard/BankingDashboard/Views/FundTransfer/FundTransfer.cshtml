@@ -1,0 +1,43 @@
+﻿@model BankingDashboard.Models.Request.FundTransferRequest
+
+@{
+    ViewData["Title"] = "Create Fund Transfer";
+}
+
+<h2>Create Fund Transfer</h2>
+@* <link rel="stylesheet" href="CSS/Style.css" /> *@
+<link rel="stylesheet" href="../StaticFiles/Styles/styles.css">
+<form asp-action="FundTransfer" method="post">
+    
+    <div class="form-group">
+        <label asp-for="FromAccount" class="control-label">From Account</label>
+        <input asp-for="FromAccount" class="form-control custom-width" type="text" />
+        <span asp-validation-for="FromAccount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ToAccount" class="control-label">To Account</label>
+        <input asp-for="ToAccount" class="form-control custom-width" type="text" />
+        <span asp-validation-for="ToAccount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label">Customer Name</label>
+        <input asp-for="CustomerName" class="form-control custom-width" type="text" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AccountBalance" class="control-label">Account Balance</label>
+        <input asp-for="AccountBalance" class="form-control custom-width" type="number" step="0.01" />
+        <span asp-validation-for="AccountBalance" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DepositeAmount" class="control-label">Deposit Amount</label>
+        <input asp-for="DepositeAmount" class="form-control custom-width" type="number" step="0.01" />
+        <span asp-validation-for="DepositeAmount" class="text-danger"></span>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
